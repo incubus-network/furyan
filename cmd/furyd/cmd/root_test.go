@@ -5,7 +5,7 @@ import (
 
 	svrcmd "github.com/cosmos/cosmos-sdk/server/cmd"
 	"github.com/incubus-network/fury/app"
-	"github.com/incubus-network/fury/cmd/furyd/cmd"
+	"github.com/incubus-network/fury/cmd/fury/cmd"
 	"github.com/stretchr/testify/require"
 )
 

@@ -44,10 +44,10 @@ Fury could be installed by two ways - downloading binary from releases page or b
 
 - Check sha256 hash sum
 
-- Place furyd into /usr/local/sbin
+- Place fury into /usr/local/sbin
 
 ```shell
-sudo mv furyd /usr/local/sbin/furyd
+sudo mv fury /usr/local/sbin/fury
 ```
 
 ### Building from source
@@ -78,7 +78,7 @@ make install
 ### Install system.d service file
 
 ```shell
-nano /etc/systemd/system/furyd.service
+nano /etc/systemd/system/fury.service
 ```
 
 Please following contents(working dir may be changed as needed)
@@ -92,7 +92,7 @@ After=network.target
 Type=simple
 User=ubuntu
 WorkingDirectory=/home/ubuntu
-ExecStart=/usr/local/sbin/furyd start
+ExecStart=/usr/local/sbin/fury start
 Restart=on-failure
 RestartSec=10
 LimitNOFILE=40960
@@ -109,11 +109,11 @@ sudo systemctl daemon-reload
 
 ### Generate keys
 
-`furyd keys add [key_name]`
+`fury keys add [key_name]`
 
 or
 
-`furyd keys add [key_name] --recover` to regenerate keys with your [BIP39](https://github.com/bitcoin/bips/tree/master/bip-0039) mnemonic
+`fury keys add [key_name] --recover` to regenerate keys with your [BIP39](https://github.com/bitcoin/bips/tree/master/bip-0039) mnemonic
 
 ### Connect to a chain and start node
 
@@ -121,7 +121,7 @@ or
 - Initialize node
 
 ```shell
-furyd init {{NODE_NAME}} --chain-id incubus-network-1
+fury init {{NODE_NAME}} --chain-id incubus-network-1
 ```
 
 Select network to join
@@ -131,7 +131,7 @@ Select network to join
 - Start node
 
 ```shell
-furyd start
+fury start
 ```
 
 ## Network Compatibility Matrix
@@ -174,17 +174,17 @@ sed -i '/s/persistent_peers = ""/persistent_peers = "4980b478f91de9be0564a547779
 - Start node
 
 ```shell
-furyd start
+fury start
 ```
 
 ### Initialize a new chain and start node
 
-- Initialize: `furyd init [node_name] --chain-id [chain_name]`
-- Add key for genesis account `furyd keys add [genesis_key_name]`
-- Add genesis account `furyd add-genesis-account [genesis_key_name] 10000000000000000000ufury`
-- Create a validator at genesis `furyd gentx [genesis_key_name] 10000000ufury --chain-id [chain_name]`
-- Collect genesis transactions `furyd collect-gentxs`
-- Start node `furyd start`
+- Initialize: `fury init [node_name] --chain-id [chain_name]`
+- Add key for genesis account `fury keys add [genesis_key_name]`
+- Add genesis account `fury add-genesis-account [genesis_key_name] 10000000000000000000ufury`
+- Create a validator at genesis `fury gentx [genesis_key_name] 10000000ufury --chain-id [chain_name]`
+- Collect genesis transactions `fury collect-gentxs`
+- Start node `fury start`
 
 ### Reset chain
 
@@ -195,13 +195,13 @@ rm -rf ~/.fury
 ### Shutdown node
 
 ```shell
-killall furyd
+killall fury
 ```
 
 ### Check version
 
 ```shell
-furyd version
+fury version
 ```
 
 ### Documentations
