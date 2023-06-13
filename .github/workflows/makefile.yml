@@ -1,0 +1,97 @@
+name: Deploy Proto & NPM publish
+
+on:
+  pull_request_target:
+    types: [opened, edited, synchronize]
+    branches: [ master ]
+
+env:
+  NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+  NPM_VERSION: patch
+
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout source repository
+      uses: actions/checkout@v3.0.0
+      with:
+        ref: master
+        repository: fanfury-sports/fury
+        path: fury
+
+    - name: Checkout destination repository
+      uses: actions/checkout@v3.0.0
+      with:     
+        ref: master
+        repository: ${{ secrets.ST_REPO }}/furyjs
+        path: furyjs
+        token: ${{ secrets.ST_TOKEN }}
+        
+    - name: Copy Proto Files
+      run: |
+        cp -r fury/proto/fury furyjs/proto
+        git -C furyjs add .
+        git -C furyjs status
+        git -C furyjs config user.email "action@github.com"
+        git -C furyjs config user.name "GitHub Action"
+        git -C furyjs commit --allow-empty -am "Proto Deployment [skip ci]"
+        
+    - name: Npm Install
+      run: |
+        echo "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN" > furyjs/.npmrc      
+        npm install --prefix furyjs
+        git -C furyjs checkout .
+        
+    - name: Delete src/codegen and types
+      run: |
+        rm -rf furyjs/src/codegen
+        rm -rf furyjs/types
+        
+    - name: Npm Run Codegen
+      run: |
+        npm run codegen --prefix furyjs
+ 
+    - name: Commit changes
+      run: |
+        git -C furyjs add .     
+        git -C furyjs config user.email "action@github.com"
+        git -C furyjs config user.name "GitHub Action"
+        git -C furyjs commit --allow-empty -am "Codegen Deployment [skip ci]"
+        
+    - name: Determine NPM version
+      run: |
+        cd furyjs      
+        if [[ "${{ github.event.pull_request.title }}" == *"major"* ]]; then
+          echo "NPM_VERSION=major" >> $GITHUB_ENV
+        elif [[ "${{ github.event.pull_request.title }}" == *"minor"* ]]; then
+          echo "NPM_VERSION=minor" >> $GITHUB_ENV
+        elif [[ "${{ github.event.pull_request.title }}" == *"patch"* ]]; then
+          echo "NPM_VERSION=patch" >> $GITHUB_ENV
+        fi
+        
+    - name: Bump NPM version
+      run: |
+        cd furyjs          
+        git status
+        if [ "${{ env.NPM_VERSION }}" == "major" ]; then
+          npm version major
+        elif [ "${{ env.NPM_VERSION }}" == "minor" ]; then
+          npm version minor
+        elif [ "${{ env.NPM_VERSION }}" == "patch" ]; then
+          npm version patch
+        fi
+        git status
+        
+    - name: Push furyjs
+      run: git -C furyjs push        
+        
+    - name: Publish NPM Package
+      run: |
+        echo "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN" > furyjs/.npmrc
+        cat furyjs/.npmrc
+        cd furyjs
+        ls -la
+        npm publish --access=restricted --force
