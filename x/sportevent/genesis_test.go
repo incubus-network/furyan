@@ -3,10 +3,10 @@ package sportevent_test
 import (
 	"testing"
 
-	"github.com/fanfury-sports/fury/testutil/nullify"
-	simappUtil "github.com/fanfury-sports/fury/testutil/simapp"
-	"github.com/fanfury-sports/fury/x/sportevent"
-	"github.com/fanfury-sports/fury/x/sportevent/types"
+	"github.com/incubus-network/fury/testutil/nullify"
+	simappUtil "github.com/incubus-network/fury/testutil/simapp"
+	"github.com/incubus-network/fury/x/sportevent"
+	"github.com/incubus-network/fury/x/sportevent/types"
 	"github.com/stretchr/testify/require"
 )
 

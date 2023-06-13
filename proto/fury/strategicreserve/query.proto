@@ -1,13 +1,12 @@
 syntax = "proto3";
 package furynetwork.fury.strategicreserve;
 
+import "fury/strategicreserve/params.proto";
+import "fury/strategicreserve/reserver.proto";
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
 
-import "fury/strategicreserve/params.proto";
-import "fury/strategicreserve/reserver.proto";
-
-option go_package = "github.com/fanfury-sports/fury/x/strategicreserve/types";
+option go_package = "github.com/incubus-network/fury/x/strategicreserve/types";
 
 // Query defines the gRPC querier service.
 service Query {
@@ -30,7 +29,7 @@ message QueryParamsRequest {}
 // Query/Params RPC method.
 message QueryParamsResponse {
   // params holds all the parameters of this module.
-  Params params = 1 [ (gogoproto.nullable) = false ];
+  Params params = 1 [(gogoproto.nullable) = false];
 }
 
 // QueryReserverRequest is the request type for the Query/Inflation RPC method.

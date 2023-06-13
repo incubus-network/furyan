@@ -8,8 +8,8 @@ import (
 
 	"github.com/golang-jwt/jwt"
 	"github.com/google/uuid"
-	"github.com/fanfury-sports/fury/testutil/sample"
-	"github.com/fanfury-sports/fury/x/sportevent/types"
+	"github.com/incubus-network/fury/testutil/sample"
+	"github.com/incubus-network/fury/x/sportevent/types"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

@@ -3,7 +3,7 @@ package furynetwork.fury.house;
 
 import "gogoproto/gogo.proto";
 
-option go_package = "github.com/fanfury-sports/fury/x/house/types";
+option go_package = "github.com/incubus-network/fury/x/house/types";
 
 // Withdrawal represents the withdrawal against a deposit.
 message Withdrawal {
@@ -20,8 +20,7 @@ message Withdrawal {
   ];
 
   // depositorAddress is the bech32-encoded address of the depositor.
-  string depositor_address = 2
-      [ (gogoproto.moretags) = "yaml:\"depositor_address\"" ];
+  string depositor_address = 2 [(gogoproto.moretags) = "yaml:\"depositor_address\""];
 
   // sport_event_uid is the uid of sport-event against which the deposit is
   // being made.
@@ -32,11 +31,10 @@ message Withdrawal {
   ];
 
   // participation_index is the id corresponding to the book participation
-  uint64 participation_index = 4
-      [ (gogoproto.moretags) = "yaml:\"participation_index\"" ];
+  uint64 participation_index = 4 [(gogoproto.moretags) = "yaml:\"participation_index\""];
 
   // mode is the withdrawal mode enum value
-  WithdrawalMode mode = 5 [ (gogoproto.moretags) = "yaml:\"mode\"" ];
+  WithdrawalMode mode = 5 [(gogoproto.moretags) = "yaml:\"mode\""];
 
   // amount is the amount being withdrawn.
   string amount = 6 [

@@ -6,9 +6,9 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/google/uuid"
-	simappUtil "github.com/fanfury-sports/fury/testutil/simapp"
-	"github.com/fanfury-sports/fury/x/bet/types"
-	sporteventtypes "github.com/fanfury-sports/fury/x/sportevent/types"
+	simappUtil "github.com/incubus-network/fury/testutil/simapp"
+	"github.com/incubus-network/fury/x/bet/types"
+	sporteventtypes "github.com/incubus-network/fury/x/sportevent/types"
 	"github.com/stretchr/testify/require"
 )
 

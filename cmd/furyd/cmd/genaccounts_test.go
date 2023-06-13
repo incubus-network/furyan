@@ -9,8 +9,8 @@ import (
 	"github.com/cosmos/cosmos-sdk/crypto/keyring"
 	clitestutil "github.com/cosmos/cosmos-sdk/testutil/cli"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/fanfury-sports/fury/cmd/furyd/cmd"
-	"github.com/fanfury-sports/fury/testutil/network"
+	"github.com/incubus-network/fury/cmd/furyd/cmd"
+	"github.com/incubus-network/fury/testutil/network"
 	"github.com/stretchr/testify/require"
 )
 

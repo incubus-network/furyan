@@ -10,7 +10,7 @@ import (
 	// "github.com/cosmos/cosmos-sdk/client/flags"
 	// sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/fanfury-sports/fury/x/dvm/types"
+	"github.com/incubus-network/fury/x/dvm/types"
 )
 
 // GetQueryCmd returns the cli query commands for this module

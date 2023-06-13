@@ -3,11 +3,10 @@ package furynetwork.fury.bet;
 
 import "fury/bet/place_bet_fields.proto";
 
-option go_package = "github.com/fanfury-sports/fury/x/bet/types";
+option go_package = "github.com/incubus-network/fury/x/bet/types";
 
 // Msg defines the Msg service.
 service Msg {
-
   // PlaceBet defines a method to place a bet with the given data.
   rpc PlaceBet(MsgPlaceBet) returns (MsgPlaceBetResponse);
 }

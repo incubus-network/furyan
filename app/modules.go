@@ -39,27 +39,27 @@ import (
 	ibctransfertypes "github.com/cosmos/ibc-go/v3/modules/apps/transfer/types"
 	ibc "github.com/cosmos/ibc-go/v3/modules/core"
 	ibchost "github.com/cosmos/ibc-go/v3/modules/core/24-host"
-	furyappparams "github.com/fanfury-sports/fury/app/params"
-	"github.com/fanfury-sports/fury/x/mint"
-	minttypes "github.com/fanfury-sports/fury/x/mint/types"
+	furyappparams "github.com/incubus-network/fury/app/params"
+	"github.com/incubus-network/fury/x/mint"
+	minttypes "github.com/incubus-network/fury/x/mint/types"
 
-	betmodule "github.com/fanfury-sports/fury/x/bet"
-	betmoduletypes "github.com/fanfury-sports/fury/x/bet/types"
+	betmodule "github.com/incubus-network/fury/x/bet"
+	betmoduletypes "github.com/incubus-network/fury/x/bet/types"
 
-	sporteventmodule "github.com/fanfury-sports/fury/x/sportevent"
-	sporteventmoduletypes "github.com/fanfury-sports/fury/x/sportevent/types"
+	sporteventmodule "github.com/incubus-network/fury/x/sportevent"
+	sporteventmoduletypes "github.com/incubus-network/fury/x/sportevent/types"
 
-	strategicreservemodule "github.com/fanfury-sports/fury/x/strategicreserve"
-	strategicreservemoduletypes "github.com/fanfury-sports/fury/x/strategicreserve/types"
+	strategicreservemodule "github.com/incubus-network/fury/x/strategicreserve"
+	strategicreservemoduletypes "github.com/incubus-network/fury/x/strategicreserve/types"
 
-	dvmmodule "github.com/fanfury-sports/fury/x/dvm"
-	dvmmoduletypes "github.com/fanfury-sports/fury/x/dvm/types"
+	dvmmodule "github.com/incubus-network/fury/x/dvm"
+	dvmmoduletypes "github.com/incubus-network/fury/x/dvm/types"
 
-	housemodule "github.com/fanfury-sports/fury/x/house"
-	housemoduletypes "github.com/fanfury-sports/fury/x/house/types"
+	housemodule "github.com/incubus-network/fury/x/house"
+	housemoduletypes "github.com/incubus-network/fury/x/house/types"
 
-	orderbookmodule "github.com/fanfury-sports/fury/x/orderbook"
-	orderbookmoduletypes "github.com/fanfury-sports/fury/x/orderbook/types"
+	orderbookmodule "github.com/incubus-network/fury/x/orderbook"
+	orderbookmoduletypes "github.com/incubus-network/fury/x/orderbook/types"
 
 	// unnamed import of statik for swagger UI support
 	_ "github.com/cosmos/cosmos-sdk/client/docs/statik"

@@ -16,7 +16,7 @@ PACKAGES_SIMTEST=$(shell go list ./... | grep '/simulation')
 LEDGER_ENABLED ?= true
 SDK_PACK := $(shell go list -m github.com/cosmos/cosmos-sdk | sed  's/ /\@/g')
 TM_VERSION := $(shell go list -m github.com/tendermint/tendermint | sed 's:.* ::') # grab everything after the space in "github.com/tendermint/tendermint v0.34.7"
-HTTPS_GIT := https://github.com/fanfury-sports/fury.git
+HTTPS_GIT := https://github.com/incubus-network/fury.git
 DOCKER := $(shell which docker)
 DOCKER_BUF := $(DOCKER) run --rm -v $(CURDIR)/proto:/workspace --workdir /workspace bufbuild/buf
 BUILDDIR ?= $(CURDIR)/build
@@ -154,64 +154,43 @@ distclean: clean
 	rm -rf vendor/
 
 ###############################################################################
-###                                  Proto                                  ###
+###                                Protobuf                                 ###
 ###############################################################################
 
-proto-all: proto-format proto-gen
+BUF_VERSION=1.15.1
 
-proto:
-	@echo
-	@echo "=========== Generate Message ============"
-	@echo
-	./scripts/protocgen.sh
-	@echo
-	@echo "=========== Generate Complete ============"
-	@echo
-
-docs:
-	@echo
-	@echo "=========== Generate Message ============"
-	@echo
-	./scripts/generate-docs.sh
-
-	statik -src=client/docs/static -dest=client/docs -f -m
-	@if [ -n "$(git status --porcelain)" ]; then \
-        echo "\033[91mSwagger docs are out of sync!!!\033[0m";\
-        exit 1;\
-    else \
-        echo "\033[92mSwagger docs are in sync\033[0m";\
-    fi
-	@echo
-	@echo "=========== Generate Complete ============"
-	@echo
-.PHONY: docs
-
-protoVer=v0.8
-protoImageName=furynetwork/fury-proto-gen:$(protoVer)
-containerProtoGen=cosmos-sdk-proto-gen-$(protoVer)
-containerProtoFmt=cosmos-sdk-proto-fmt-$(protoVer)
+proto-all: proto-gen
 
 proto-gen:
-	@echo "Generating Protobuf files"
-	@if docker ps -a --format '{{.Names}}' | grep -Eq "^${containerProtoGen}$$"; then docker start -a $(containerProtoGen); else docker run --name $(containerProtoGen) -v $(CURDIR):/workspace --workdir /workspace $(protoImageName) \
-		sh ./scripts/protocgen.sh; fi
-
-proto-format:
-	@echo "Formatting Protobuf files"
-	@if docker ps -a --format '{{.Names}}' | grep -Eq "^${containerProtoFmt}$$"; then docker start -a $(containerProtoFmt); else docker run --name $(containerProtoFmt) -v $(CURDIR):/workspace --workdir /workspace tendermintdev/docker-build-proto \
-		find ./ -not -path "./third_party/*" -name "*.proto" -exec clang-format -i {} \; ; fi
-
-proto-image-build:
-	@DOCKER_BUILDKIT=1 docker build -t $(protoImageName) -f ./proto/Dockerfile ./proto
-
-proto-image-push:
-	docker push $(protoImageName)
+	@echo "🤖 Generating code from protobuf..."
+	@$(DOCKER) run --rm --volume "$(PWD)":/workspace --workdir /workspace \
+		blackfury-proto sh ./proto/generate.sh
+	@echo "✅ Completed code generation!"
 
 proto-lint:
-	@$(DOCKER_BUF) lint --error-format=json
+	@echo "🤖 Running protobuf linter..."
+	@$(DOCKER) run --volume "$(PWD)":/workspace --workdir /workspace \
+		bufbuild/buf:$(BUF_VERSION) lint
+	@echo "✅ Completed protobuf linting!"
 
-proto-check-breaking:
-	@$(DOCKER_BUF) breaking --against $(HTTPS_GIT)#branch=master
+proto-format:
+	@echo "🤖 Running protobuf format..."
+	@$(DOCKER) run --volume "$(PWD)":/workspace --workdir /workspace \
+		bufbuild/buf:$(BUF_VERSION) format -w
+	@echo "✅ Completed protobuf format!"
+
+proto-breaking-check:
+	@echo "🤖 Running protobuf breaking check against develop branch..."
+	@$(DOCKER) run --volume "$(PWD)":/workspace --workdir /workspace \
+		bufbuild/buf:$(BUF_VERSION) breaking --against '.git#branch=develop'
+	@echo "✅ Completed protobuf breaking check!"
+
+proto-setup:
+	@echo "🤖 Setting up protobuf environment..."
+	@$(DOCKER) build --rm --tag blackfury-proto:latest --file proto/Dockerfile .
+	@echo "✅ Setup protobuf environment!"
+
+
 
 
 ###############################################################################
@@ -275,7 +254,7 @@ update-swagger-docs: statik
 .PHONY: update-swagger-docs
 
 godocs:
-	@echo "--> Wait a few seconds and visit http://localhost:6060/pkg/github.com/FURY-Network/FURY/types"
+	@echo "--> Wait a few seconds and visit http://localhost:6060/pkg/github.com/incubus-network/FURY/types"
 	godoc -http=:6060
 
 # This builds a docs site for each branch/tag in `./docs/versions`

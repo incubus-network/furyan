@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/fanfury-sports/fury/x/dvm/keeper"
+	"github.com/incubus-network/fury/x/dvm/keeper"
 )
 
 // EndBlocker settles the active bets of resolved sport events

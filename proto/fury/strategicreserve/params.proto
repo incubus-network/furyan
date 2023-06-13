@@ -3,7 +3,7 @@ package furynetwork.fury.strategicreserve;
 
 import "gogoproto/gogo.proto";
 
-option go_package = "github.com/fanfury-sports/fury/x/strategicreserve/types";
+option go_package = "github.com/incubus-network/fury/x/strategicreserve/types";
 
 // Params defines the parameters for the strategic reserve module.
 message Params {
@@ -11,6 +11,5 @@ message Params {
   option (gogoproto.goproto_stringer) = false;
 
   // committee_members hold the list of committee members.
-  repeated string committee_members = 1
-      [ (gogoproto.moretags) = "yaml:\"committee_members\"" ];
+  repeated string committee_members = 1 [(gogoproto.moretags) = "yaml:\"committee_members\""];
 }

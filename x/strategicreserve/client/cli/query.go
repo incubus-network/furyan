@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	"github.com/cosmos/cosmos-sdk/client"
-	"github.com/fanfury-sports/fury/x/strategicreserve/types"
+	"github.com/incubus-network/fury/x/strategicreserve/types"
 	"github.com/spf13/cobra"
 )
 

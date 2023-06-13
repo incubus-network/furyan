@@ -4,7 +4,7 @@ import (
 	"context"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/fanfury-sports/fury/x/orderbook/types"
+	"github.com/incubus-network/fury/x/orderbook/types"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )

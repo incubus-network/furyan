@@ -1,11 +1,11 @@
 syntax = "proto3";
 package furynetwork.fury.dvm;
 
-import "gogoproto/gogo.proto";
 import "fury/dvm/ticket.proto";
 import "fury/dvm/vote.proto";
+import "gogoproto/gogo.proto";
 
-option go_package = "github.com/fanfury-sports/fury/x/dvm/types";
+option go_package = "github.com/incubus-network/fury/x/dvm/types";
 
 // PublicKeysChangeProposal is the type for the proposal for additions and
 // removals of pub keys.
@@ -15,8 +15,7 @@ message PublicKeysChangeProposal {
   // creator is the account address of the proposal creator.
   string creator = 2;
   // modifications contain the ticket payload of the proposal.
-  PubkeysChangeProposalPayload modifications = 3
-      [ (gogoproto.nullable) = false ];
+  PubkeysChangeProposalPayload modifications = 3 [(gogoproto.nullable) = false];
   // votes contains the votes of the proposal.
   repeated Vote votes = 4;
   // start_ts is the block time that the proposal is set.
@@ -31,7 +30,7 @@ message PublicKeysChangeProposal {
 // for additions and removals of pub keys.
 message PublicKeysChangeFinishedProposal {
   // proposal is the proposal for additions and removals of pub keys.
-  PublicKeysChangeProposal proposal = 1 [ (gogoproto.nullable) = false ];
+  PublicKeysChangeProposal proposal = 1 [(gogoproto.nullable) = false];
   // result is the result of the finished proposal.
   ProposalResult result = 2;
   // result_meta is the metadata related to the result of the finished proposal.

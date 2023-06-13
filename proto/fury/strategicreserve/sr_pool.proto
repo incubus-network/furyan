@@ -1,9 +1,9 @@
 syntax = "proto3";
 package furynetwork.fury.strategicreserve;
 
-option go_package = "github.com/fanfury-sports/fury/x/strategicreserve/types";
-
 import "gogoproto/gogo.proto";
+
+option go_package = "github.com/incubus-network/fury/x/strategicreserve/types";
 
 // SRPool defines the locked amount and the unlocked amount in the
 // sr pool Account.

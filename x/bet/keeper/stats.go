@@ -2,8 +2,8 @@ package keeper
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/fanfury-sports/fury/utils"
-	"github.com/fanfury-sports/fury/x/bet/types"
+	"github.com/incubus-network/fury/utils"
+	"github.com/incubus-network/fury/x/bet/types"
 )
 
 // SetBetStats sets bet statistics in the store

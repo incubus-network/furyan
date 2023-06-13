@@ -3,7 +3,7 @@ package furynetwork.fury.house;
 
 import "gogoproto/gogo.proto";
 
-option go_package = "github.com/fanfury-sports/fury/x/house/types";
+option go_package = "github.com/incubus-network/fury/x/house/types";
 
 // Deposit represents the deposit against a sport event held by an account.
 message Deposit {
@@ -12,7 +12,7 @@ message Deposit {
   option (gogoproto.goproto_stringer) = false;
 
   // creator is the bech32-encoded address of the depositor.
-  string creator = 1 [ (gogoproto.moretags) = "yaml:\"creator\"" ];
+  string creator = 1 [(gogoproto.moretags) = "yaml:\"creator\""];
 
   // sport_event_uid is the uid of sport event against which deposit is being
   // made.
@@ -23,8 +23,7 @@ message Deposit {
   ];
 
   // participation_index index corresponding to the book participation
-  uint64 participation_index = 3
-      [ (gogoproto.moretags) = "yaml:\"participation_index\"" ];
+  uint64 participation_index = 3 [(gogoproto.moretags) = "yaml:\"participation_index\""];
 
   // amount is the amount being deposited.
   string amount = 4 [
@@ -48,7 +47,7 @@ message Deposit {
   ];
 
   // withdrawal_count is the total count of the withdrawal attempts
-  uint64 withdrawal_count = 7 [ (gogoproto.moretags) = "yaml:\"withdrawals\"" ];
+  uint64 withdrawal_count = 7 [(gogoproto.moretags) = "yaml:\"withdrawals\""];
 
   // total_withdrawal_amount is the total amount of withdrawal attempts
   string total_withdrawal_amount = 8 [

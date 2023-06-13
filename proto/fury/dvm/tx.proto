@@ -1,18 +1,16 @@
 syntax = "proto3";
 package furynetwork.fury.dvm;
 
-option go_package = "github.com/fanfury-sports/fury/x/dvm/types";
+option go_package = "github.com/incubus-network/fury/x/dvm/types";
 
 // Msg defines the Msg service.
 service Msg {
   // PubkeysChangeProposal defines a method to submit a proposal for changing
   // the allowed public keys.
-  rpc SubmitPubkeysChangeProposal(MsgSubmitPubkeysChangeProposalRequest)
-      returns (MsgSubmitPubkeysChangeProposalResponse);
+  rpc SubmitPubkeysChangeProposal(MsgSubmitPubkeysChangeProposalRequest) returns (MsgSubmitPubkeysChangeProposalResponse);
   // VotePubkeysChange defines a method to vote for a proposal for changing the
   // allowed public keys.
-  rpc VotePubkeysChange(MsgVotePubkeysChangeRequest)
-      returns (MsgVotePubkeysChangeResponse);
+  rpc VotePubkeysChange(MsgVotePubkeysChangeRequest) returns (MsgVotePubkeysChangeResponse);
 }
 
 // MsgPubkeysChangeProposalRequest is the type of request for modification of
@@ -26,7 +24,9 @@ message MsgSubmitPubkeysChangeProposalRequest {
 
 // MsgPubkeysChangeProposalResponse is the type of response for modification of
 // public keys.
-message MsgSubmitPubkeysChangeProposalResponse { bool success = 1; }
+message MsgSubmitPubkeysChangeProposalResponse {
+  bool success = 1;
+}
 
 // MsgVotePubkeysChangeRequest is the type of request to vote on the
 // modification of public keys proposal.
@@ -41,4 +41,6 @@ message MsgVotePubkeysChangeRequest {
 
 // MsgVotePubkeysChangeResponse is the type of response vote for public keys
 // modification.
-message MsgVotePubkeysChangeResponse { bool success = 1; }
+message MsgVotePubkeysChangeResponse {
+  bool success = 1;
+}

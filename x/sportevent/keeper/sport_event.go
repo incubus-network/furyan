@@ -2,8 +2,8 @@ package keeper
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/fanfury-sports/fury/utils"
-	"github.com/fanfury-sports/fury/x/sportevent/types"
+	"github.com/incubus-network/fury/utils"
+	"github.com/incubus-network/fury/x/sportevent/types"
 )
 
 // SetSportEvent sets a specific sport-event in the store

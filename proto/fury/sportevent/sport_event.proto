@@ -1,10 +1,10 @@
 syntax = "proto3";
 package furynetwork.fury.sportevent;
 
-import "gogoproto/gogo.proto";
 import "fury/sportevent/odds.proto";
+import "gogoproto/gogo.proto";
 
-option go_package = "github.com/fanfury-sports/fury/x/sportevent/types";
+option go_package = "github.com/incubus-network/fury/x/sportevent/types";
 
 // SportEvent the representation of the sport-event to be stored in
 // the sport-event state.

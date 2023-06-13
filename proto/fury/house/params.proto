@@ -3,7 +3,7 @@ package furynetwork.fury.house;
 
 import "gogoproto/gogo.proto";
 
-option go_package = "github.com/fanfury-sports/fury/x/house/types";
+option go_package = "github.com/incubus-network/fury/x/house/types";
 
 // Params define the parameters for the house module.
 message Params {

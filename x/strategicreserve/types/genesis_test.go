@@ -3,7 +3,7 @@ package types_test
 import (
 	"testing"
 
-	"github.com/fanfury-sports/fury/x/strategicreserve/types"
+	"github.com/incubus-network/fury/x/strategicreserve/types"
 	"github.com/stretchr/testify/require"
 )
 

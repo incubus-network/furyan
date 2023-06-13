@@ -1,7 +1,7 @@
 package keeper
 
 import (
-	"github.com/fanfury-sports/fury/x/bet/types"
+	"github.com/incubus-network/fury/x/bet/types"
 )
 
 type msgServer struct {

@@ -5,7 +5,7 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
-	"github.com/fanfury-sports/fury/x/house/types"
+	"github.com/incubus-network/fury/x/house/types"
 )
 
 // Deposit defines a method for performing a deposit of coins to become part of the house correspondifg to a sport event.

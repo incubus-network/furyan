@@ -4,9 +4,9 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 
-	housetypes "github.com/fanfury-sports/fury/x/house/types"
-	"github.com/fanfury-sports/fury/x/orderbook/types"
-	sporteventtypes "github.com/fanfury-sports/fury/x/sportevent/types"
+	housetypes "github.com/incubus-network/fury/x/house/types"
+	"github.com/incubus-network/fury/x/orderbook/types"
+	sporteventtypes "github.com/incubus-network/fury/x/sportevent/types"
 )
 
 // SetBookParticipation sets a book participation.

@@ -3,7 +3,7 @@ package types
 import (
 	"fmt"
 
-	"github.com/fanfury-sports/fury/utils"
+	"github.com/incubus-network/fury/utils"
 )
 
 // DefaultUID is the default  global uid

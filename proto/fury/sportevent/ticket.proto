@@ -1,12 +1,11 @@
-
 syntax = "proto3";
 package furynetwork.fury.sportevent;
 
-import "fury/sportevent/sport_event.proto";
 import "fury/sportevent/odds.proto";
+import "fury/sportevent/sport_event.proto";
 import "gogoproto/gogo.proto";
 
-option go_package = "github.com/fanfury-sports/fury/x/sportevent/types";
+option go_package = "github.com/incubus-network/fury/x/sportevent/types";
 
 // SportEventAddTicketPayload indicates data of add sport-event ticket
 message SportEventAddTicketPayload {

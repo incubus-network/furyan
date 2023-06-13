@@ -2,8 +2,8 @@ package types
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	bettypes "github.com/fanfury-sports/fury/x/bet/types"
-	sporteventtypes "github.com/fanfury-sports/fury/x/sportevent/types"
+	bettypes "github.com/incubus-network/fury/x/bet/types"
+	sporteventtypes "github.com/incubus-network/fury/x/sportevent/types"
 )
 
 // AccountKeeper defines the expected account keeper methods.

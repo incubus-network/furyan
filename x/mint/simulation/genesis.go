@@ -9,8 +9,8 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
-	"github.com/fanfury-sports/fury/app/params"
-	"github.com/fanfury-sports/fury/x/mint/types"
+	"github.com/incubus-network/fury/app/params"
+	"github.com/incubus-network/fury/x/mint/types"
 )
 
 // Simulation parameter constants

@@ -57,7 +57,7 @@ sudo mv furyd /usr/local/sbin/furyd
 - Clone git repository
 
 ```shell
-git clone https://github.com/fanfury-sports/fury.git
+git clone https://github.com/incubus-network/fury.git
 ```
 
 - Checkout release tag
@@ -121,7 +121,7 @@ or
 - Initialize node
 
 ```shell
-furyd init {{NODE_NAME}} --chain-id fanfury-sports-1
+furyd init {{NODE_NAME}} --chain-id incubus-network-1
 ```
 
 Select network to join
@@ -148,12 +148,12 @@ Coming Soon!!
 
 ### Testnet
 
-- [fanfury-sports-1](https://github.com/fanfury-sports/networks/fanfury-sports-1)
+- [incubus-network-1](https://github.com/incubus-network/networks/incubus-network-1)
 
 - Place the genesis file  with the genesis file of the chain.
 
 ```shell
-wget https://github.com/fanfury-sports/networks/blob/master/fanfury-sports-1/genesis.json -O ~/.fury/config/genesis.json
+wget https://github.com/incubus-network/networks/blob/master/incubus-network-1/genesis.json -O ~/.fury/config/genesis.json
 ```
 
 Verify genesis hash sum
@@ -162,7 +162,7 @@ Verify genesis hash sum
 sha256sum ~/.fury/config/genesis.json
 ```
 
-Correct sha256 sum for fanfury-sports-1 is - 2bea72699f9c1afd6217f7e76f14f07c1fbe849d090fc37cd008a42d14d5d30c
+Correct sha256 sum for incubus-network-1 is - 2bea72699f9c1afd6217f7e76f14f07c1fbe849d090fc37cd008a42d14d5d30c
 Genesis file sha sum is published in according repository.
 
 - Add `persistent_peers` or `seeds` in `${HOME}/.fury/config/config.toml`

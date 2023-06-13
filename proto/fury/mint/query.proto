@@ -1,11 +1,11 @@
 syntax = "proto3";
 package furynetwork.fury.mint;
 
+import "fury/mint/params.proto";
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
-import "fury/mint/params.proto";
 
-option go_package = "github.com/fanfury-sports/fury/x/mint/types";
+option go_package = "github.com/incubus-network/fury/x/mint/types";
 
 // Query defines the gRPC querier service.
 service Query {
@@ -25,14 +25,12 @@ service Query {
   }
 
   // PhaseProvisions current minting phase provisions value.
-  rpc PhaseProvisions(QueryPhaseProvisionsRequest)
-      returns (QueryPhaseProvisionsResponse) {
+  rpc PhaseProvisions(QueryPhaseProvisionsRequest) returns (QueryPhaseProvisionsResponse) {
     option (google.api.http).get = "/cosmos/mint/v1beta1/phase_provisions";
   }
 
   // EndPhaseStatus returns the current minting phase status.
-  rpc EndPhaseStatus(QueryEndPhaseStatusRequest)
-      returns (QueryEndPhaseStatusResponse) {
+  rpc EndPhaseStatus(QueryEndPhaseStatusRequest) returns (QueryEndPhaseStatusResponse) {
     option (google.api.http).get = "/cosmos/mint/v1beta1/endphase_status";
   }
 }
@@ -45,7 +43,7 @@ message QueryParamsRequest {}
 // Query/Params RPC method.
 message QueryParamsResponse {
   // params contains all of the parameters of this module.
-  Params params = 1 [ (gogoproto.nullable) = false ];
+  Params params = 1 [(gogoproto.nullable) = false];
 }
 
 // QueryInflationRequest is the request type for the Query/Inflation RPC method.

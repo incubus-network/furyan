@@ -12,9 +12,9 @@ import (
 	clitestutil "github.com/cosmos/cosmos-sdk/testutil/cli"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/golang-jwt/jwt/v4"
-	simappUtil "github.com/fanfury-sports/fury/testutil/simapp"
-	"github.com/fanfury-sports/fury/utils"
-	"github.com/fanfury-sports/fury/x/dvm/client/cli"
+	simappUtil "github.com/incubus-network/fury/testutil/simapp"
+	"github.com/incubus-network/fury/utils"
+	"github.com/incubus-network/fury/x/dvm/client/cli"
 	"github.com/stretchr/testify/require"
 )
 

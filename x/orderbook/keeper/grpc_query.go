@@ -1,7 +1,7 @@
 package keeper
 
 import (
-	"github.com/fanfury-sports/fury/x/orderbook/types"
+	"github.com/incubus-network/fury/x/orderbook/types"
 )
 
 var _ types.QueryServer = Keeper{}

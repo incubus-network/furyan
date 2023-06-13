@@ -20,14 +20,14 @@ import (
 	ibctransfertypes "github.com/cosmos/ibc-go/v3/modules/apps/transfer/types"
 	ibchost "github.com/cosmos/ibc-go/v3/modules/core/24-host"
 
-	betmoduletypes "github.com/fanfury-sports/fury/x/bet/types"
-	dvmmoduletypes "github.com/fanfury-sports/fury/x/dvm/types"
+	betmoduletypes "github.com/incubus-network/fury/x/bet/types"
+	dvmmoduletypes "github.com/incubus-network/fury/x/dvm/types"
 
-	housemoduletypes "github.com/fanfury-sports/fury/x/house/types"
-	minttypes "github.com/fanfury-sports/fury/x/mint/types"
-	orderbookmoduletypes "github.com/fanfury-sports/fury/x/orderbook/types"
-	sporteventmoduletypes "github.com/fanfury-sports/fury/x/sportevent/types"
-	strategicreservemoduletypes "github.com/fanfury-sports/fury/x/strategicreserve/types"
+	housemoduletypes "github.com/incubus-network/fury/x/house/types"
+	minttypes "github.com/incubus-network/fury/x/mint/types"
+	orderbookmoduletypes "github.com/incubus-network/fury/x/orderbook/types"
+	sporteventmoduletypes "github.com/incubus-network/fury/x/sportevent/types"
+	strategicreservemoduletypes "github.com/incubus-network/fury/x/strategicreserve/types"
 
 	// unnamed import of statik for swagger UI support
 	_ "github.com/cosmos/cosmos-sdk/client/docs/statik"

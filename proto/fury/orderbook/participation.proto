@@ -3,7 +3,7 @@ package furynetwork.fury.orderbook;
 
 import "gogoproto/gogo.proto";
 
-option go_package = "github.com/fanfury-sports/fury/x/orderbook/types";
+option go_package = "github.com/incubus-network/fury/x/orderbook/types";
 
 // BookParticipation represents the participants of an order book.
 message BookParticipation {
@@ -12,7 +12,7 @@ message BookParticipation {
   option (gogoproto.goproto_stringer) = false;
 
   // index is the id of initial participation queue
-  uint64 index = 1 [ (gogoproto.moretags) = "yaml:\"index\"" ];
+  uint64 index = 1 [(gogoproto.moretags) = "yaml:\"index\""];
 
   // book_uid is the unique identifier corresponding to the book
   string book_uid = 2 [
@@ -22,12 +22,10 @@ message BookParticipation {
   ];
 
   // participant_address is the bech32-encoded address of the participant.
-  string participant_address = 3
-      [ (gogoproto.moretags) = "yaml:\"participant_address\"" ];
+  string participant_address = 3 [(gogoproto.moretags) = "yaml:\"participant_address\""];
 
   // if participation is a module account
-  bool is_module_account = 4
-      [ (gogoproto.moretags) = "yaml:\"is_module_account\"" ];
+  bool is_module_account = 4 [(gogoproto.moretags) = "yaml:\"is_module_account\""];
 
   // liquidity is the total initial liquidity provided
   string liquidity = 5 [
@@ -43,8 +41,7 @@ message BookParticipation {
     (gogoproto.moretags) = "yaml:\"current_round_liquidity\""
   ];
 
-  uint64 exposures_not_filled = 7
-      [ (gogoproto.moretags) = "yaml:\"exposures_not_filled\"" ];
+  uint64 exposures_not_filled = 7 [(gogoproto.moretags) = "yaml:\"exposures_not_filled\""];
 
   // total_bet_amount is the total bet amount corresponding to all exposure
   string total_bet_amount = 8 [
@@ -93,7 +90,7 @@ message BookParticipation {
   ];
 
   // if participation is settled
-  bool is_settled = 14 [ (gogoproto.moretags) = "yaml:\"is_settled\"" ];
+  bool is_settled = 14 [(gogoproto.moretags) = "yaml:\"is_settled\""];
 }
 
 // ParticipationBetPair represents the book participation and bet bond
@@ -106,8 +103,7 @@ message ParticipationBetPair {
   ];
 
   // participation_index is the count of initial participation queue
-  uint64 participation_index = 2
-      [ (gogoproto.moretags) = "yaml:\"participation_index\"" ];
+  uint64 participation_index = 2 [(gogoproto.moretags) = "yaml:\"participation_index\""];
 
   // bet_uid is bet's uuid
   string bet_uid = 3 [

@@ -1,7 +1,7 @@
 syntax = "proto3";
 package furynetwork.fury.orderbook;
 
-option go_package = "github.com/fanfury-sports/fury/x/orderbook/types";
+option go_package = "github.com/incubus-network/fury/x/orderbook/types";
 
 // OrderBookStats holds statistics of the order-book
 message OrderBookStats {

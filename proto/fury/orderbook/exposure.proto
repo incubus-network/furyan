@@ -3,7 +3,7 @@ package furynetwork.fury.orderbook;
 
 import "gogoproto/gogo.proto";
 
-option go_package = "github.com/fanfury-sports/fury/x/orderbook/types";
+option go_package = "github.com/incubus-network/fury/x/orderbook/types";
 
 // BookOddsExposure represents the exposures taken on odds
 message BookOddsExposure {
@@ -25,8 +25,7 @@ message BookOddsExposure {
     json_name = "odds_uid"
   ];
 
-  repeated uint64 fulfillment_queue = 3
-      [ (gogoproto.moretags) = "yaml:\"fulfillment_queue\"" ];
+  repeated uint64 fulfillment_queue = 3 [(gogoproto.moretags) = "yaml:\"fulfillment_queue\""];
 }
 
 // ParticipationExposure represents the exposures taken on odds by
@@ -51,8 +50,7 @@ message ParticipationExposure {
   ];
 
   // participation_index is the id of initial participation queue
-  uint64 participation_index = 3
-      [ (gogoproto.moretags) = "yaml:\"participation_index\"" ];
+  uint64 participation_index = 3 [(gogoproto.moretags) = "yaml:\"participation_index\""];
 
   // exposure is the total exposure taken on given odd
   string exposure = 4 [
@@ -68,8 +66,8 @@ message ParticipationExposure {
     (gogoproto.moretags) = "yaml:\"bet_amount\""
   ];
 
-  bool is_fulfilled = 6 [ (gogoproto.moretags) = "yaml:\"is_fulfilled\"" ];
+  bool is_fulfilled = 6 [(gogoproto.moretags) = "yaml:\"is_fulfilled\""];
 
   // number of current round in queue
-  uint64 round = 7 [ (gogoproto.moretags) = "yaml:\"round\"" ];
+  uint64 round = 7 [(gogoproto.moretags) = "yaml:\"round\""];
 }

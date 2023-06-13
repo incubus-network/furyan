@@ -4,8 +4,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 
-	"github.com/fanfury-sports/fury/app/params"
-	"github.com/fanfury-sports/fury/x/orderbook/types"
+	"github.com/incubus-network/fury/app/params"
+	"github.com/incubus-network/fury/x/orderbook/types"
 )
 
 // transferFundsFromUserToModule transfers the given amount from

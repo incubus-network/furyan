@@ -5,8 +5,8 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
-	"github.com/fanfury-sports/fury/x/dvm/keeper"
-	"github.com/fanfury-sports/fury/x/dvm/types"
+	"github.com/incubus-network/fury/x/dvm/keeper"
+	"github.com/incubus-network/fury/x/dvm/types"
 )
 
 // NewHandler initialize a new sdk.handler instance for registered messages

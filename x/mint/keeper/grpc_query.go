@@ -1,7 +1,7 @@
 package keeper
 
 import (
-	"github.com/fanfury-sports/fury/x/mint/types"
+	"github.com/incubus-network/fury/x/mint/types"
 )
 
 var _ types.QueryServer = Keeper{}

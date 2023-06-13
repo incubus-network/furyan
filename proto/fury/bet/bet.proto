@@ -1,10 +1,10 @@
 syntax = "proto3";
 package furynetwork.fury.bet;
 
-import "gogoproto/gogo.proto";
 import "fury/bet/odds_type.proto";
+import "gogoproto/gogo.proto";
 
-option go_package = "github.com/fanfury-sports/fury/x/bet/types";
+option go_package = "github.com/incubus-network/fury/x/bet/types";
 
 // Bet is the main type of bet in the blockchain state.
 message Bet {
@@ -152,11 +152,9 @@ message SettledBet {
 message BetFulfillment {
   // participant_address is the bech32-encoded address of the participant
   // fulfilling bet.
-  string participant_address = 1
-      [ (gogoproto.moretags) = "yaml:\"participant_address\"" ];
+  string participant_address = 1 [(gogoproto.moretags) = "yaml:\"participant_address\""];
   // participation_index is the index in initial participation queue index
-  uint64 participation_index = 2
-      [ (gogoproto.moretags) = "yaml:\"participation_index\"" ];
+  uint64 participation_index = 2 [(gogoproto.moretags) = "yaml:\"participation_index\""];
   // bet amount fulfilled by the participation
   string bet_amount = 3 [
     (gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int",

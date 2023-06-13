@@ -3,7 +3,7 @@ package furynetwork.fury.sportevent;
 
 import "gogoproto/gogo.proto";
 
-option go_package = "github.com/fanfury-sports/fury/x/sportevent/types";
+option go_package = "github.com/incubus-network/fury/x/sportevent/types";
 
 // Params defines the parameters for the module.
 // contains bet constraints associated to a sport-event.

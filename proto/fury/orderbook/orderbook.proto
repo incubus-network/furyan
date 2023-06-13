@@ -3,7 +3,7 @@ package furynetwork.fury.orderbook;
 
 import "gogoproto/gogo.proto";
 
-option go_package = "github.com/fanfury-sports/fury/x/orderbook/types";
+option go_package = "github.com/incubus-network/fury/x/orderbook/types";
 
 // OrderBook represents the order book maintained against a sport event.
 message OrderBook {
@@ -19,11 +19,10 @@ message OrderBook {
   ];
 
   // participation_count is the count of participations in the order book
-  uint64 participation_count = 2
-      [ (gogoproto.moretags) = "yaml:\"participation_count\"" ];
+  uint64 participation_count = 2 [(gogoproto.moretags) = "yaml:\"participation_count\""];
 
   // odds_count is the count of the odds in the order book
-  uint64 odds_count = 3 [ (gogoproto.moretags) = "yaml:\"odds_count\"" ];
+  uint64 odds_count = 3 [(gogoproto.moretags) = "yaml:\"odds_count\""];
 
   // order book status
   OrderBookStatus status = 4;

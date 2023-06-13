@@ -7,8 +7,8 @@ import (
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
-	"github.com/fanfury-sports/fury/x/dvm/keeper"
-	"github.com/fanfury-sports/fury/x/dvm/types"
+	"github.com/incubus-network/fury/x/dvm/keeper"
+	"github.com/incubus-network/fury/x/dvm/types"
 )
 
 // SimulateMsgChangePubkeysListProposal simulates MsgChangePubkeysListProposal message registration

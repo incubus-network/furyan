@@ -9,8 +9,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 	"github.com/cosmos/cosmos-sdk/x/simulation"
-	"github.com/fanfury-sports/fury/x/bet/keeper"
-	"github.com/fanfury-sports/fury/x/bet/types"
+	"github.com/incubus-network/fury/x/bet/keeper"
+	"github.com/incubus-network/fury/x/bet/types"
 	"github.com/spf13/cast"
 )
 

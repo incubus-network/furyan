@@ -5,7 +5,7 @@ import (
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/spf13/cast"
 
-	"github.com/fanfury-sports/fury/x/house/types"
+	"github.com/incubus-network/fury/x/house/types"
 )
 
 // SetDeposit sets a deposit.

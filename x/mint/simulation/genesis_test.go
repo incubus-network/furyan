@@ -13,8 +13,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
-	"github.com/fanfury-sports/fury/x/mint/simulation"
-	"github.com/fanfury-sports/fury/x/mint/types"
+	"github.com/incubus-network/fury/x/mint/simulation"
+	"github.com/incubus-network/fury/x/mint/types"
 )
 
 var params = types.Params{

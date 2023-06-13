@@ -1,9 +1,9 @@
 syntax = "proto3";
 package furynetwork.fury.mint;
 
-option go_package = "github.com/fanfury-sports/fury/x/mint/types";
-
 import "gogoproto/gogo.proto";
+
+option go_package = "github.com/incubus-network/fury/x/mint/types";
 
 // Minter represents the minting state.
 message Minter {

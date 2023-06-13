@@ -2,13 +2,13 @@ syntax = "proto3";
 package furynetwork.fury.house;
 
 import "cosmos/base/query/v1beta1/pagination.proto";
+import "fury/house/deposit.proto";
+import "fury/house/params.proto";
+import "fury/house/withdraw.proto";
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
-import "fury/house/params.proto";
-import "fury/house/deposit.proto";
-import "fury/house/withdraw.proto";
 
-option go_package = "github.com/fanfury-sports/fury/x/house/types";
+option go_package = "github.com/incubus-network/fury/x/house/types";
 
 // Query defines the gRPC querier service.
 service Query {
@@ -23,14 +23,12 @@ service Query {
   }
 
   // DepositorDeposits queries deposits info for given depositor.
-  rpc DepositorDeposits(QueryDepositorDepositsRequest)
-      returns (QueryDepositorDepositsResponse) {
+  rpc DepositorDeposits(QueryDepositorDepositsRequest) returns (QueryDepositorDepositsResponse) {
     option (google.api.http).get = "/fury/deposits/{depositor_address}";
   }
 
   // DepositorWithdrawals queries withdrawals info for given depositor.
-  rpc DepositorWithdrawals(QueryDepositorWithdrawalsRequest)
-      returns (QueryDepositorWithdrawalsResponse) {
+  rpc DepositorWithdrawals(QueryDepositorWithdrawalsRequest) returns (QueryDepositorWithdrawalsResponse) {
     option (google.api.http).get = "/fury/withdrawals/{depositor_address}";
   }
 }
@@ -43,7 +41,7 @@ message QueryParamsRequest {}
 // Query/Params RPC method.
 message QueryParamsResponse {
   // params holds all the parameters of this module.
-  Params params = 1 [ (gogoproto.nullable) = false ];
+  Params params = 1 [(gogoproto.nullable) = false];
 }
 
 // QueryDepositsRequest is request type for Query/Deposits RPC method.
@@ -55,7 +53,7 @@ message QueryDepositsRequest {
 // QueryDepositsResponse is response type for the Query/Deposits RPC method
 message QueryDepositsResponse {
   // deposits contains all the queried deposits.
-  repeated Deposit deposits = 1 [ (gogoproto.nullable) = false ];
+  repeated Deposit deposits = 1 [(gogoproto.nullable) = false];
 
   // pagination defines the pagination in the response.
   cosmos.base.query.v1beta1.PageResponse pagination = 2;
@@ -75,7 +73,7 @@ message QueryDepositorDepositsRequest {
 // Query/DepositorDeposits RPC method
 message QueryDepositorDepositsResponse {
   // deposits contains all the queried deposits.
-  repeated Deposit deposits = 1 [ (gogoproto.nullable) = false ];
+  repeated Deposit deposits = 1 [(gogoproto.nullable) = false];
 
   // pagination defines the pagination in the response.
   cosmos.base.query.v1beta1.PageResponse pagination = 2;
@@ -95,7 +93,7 @@ message QueryDepositorWithdrawalsRequest {
 // Query/DepositorWithdrawals RPC method
 message QueryDepositorWithdrawalsResponse {
   // withdrawals contains all the queried withdrawals.
-  repeated Withdrawal withdrawals = 1 [ (gogoproto.nullable) = false ];
+  repeated Withdrawal withdrawals = 1 [(gogoproto.nullable) = false];
 
   // pagination defines the pagination in the response.
   cosmos.base.query.v1beta1.PageResponse pagination = 2;

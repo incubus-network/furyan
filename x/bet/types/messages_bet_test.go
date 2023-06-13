@@ -5,8 +5,8 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
-	"github.com/fanfury-sports/fury/testutil/sample"
-	"github.com/fanfury-sports/fury/x/bet/types"
+	"github.com/incubus-network/fury/testutil/sample"
+	"github.com/incubus-network/fury/x/bet/types"
 	"github.com/stretchr/testify/require"
 )
 

@@ -3,7 +3,7 @@ package keeper_test
 import (
 	"testing"
 
-	"github.com/fanfury-sports/fury/x/bet/types"
+	"github.com/incubus-network/fury/x/bet/types"
 	"github.com/stretchr/testify/require"
 )
 

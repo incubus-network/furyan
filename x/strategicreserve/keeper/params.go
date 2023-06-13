@@ -3,8 +3,8 @@ package keeper
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/fanfury-sports/fury/app/params"
-	"github.com/fanfury-sports/fury/x/strategicreserve/types"
+	"github.com/incubus-network/fury/app/params"
+	"github.com/incubus-network/fury/x/strategicreserve/types"
 )
 
 // DepositDenom returns deposit coin denomination

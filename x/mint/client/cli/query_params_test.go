@@ -6,9 +6,9 @@ import (
 	"testing"
 
 	clitestutil "github.com/cosmos/cosmos-sdk/testutil/cli"
-	"github.com/fanfury-sports/fury/testutil/network"
-	"github.com/fanfury-sports/fury/x/mint/client/cli"
-	"github.com/fanfury-sports/fury/x/mint/types"
+	"github.com/incubus-network/fury/testutil/network"
+	"github.com/incubus-network/fury/x/mint/client/cli"
+	"github.com/incubus-network/fury/x/mint/types"
 	"github.com/stretchr/testify/require"
 )
 
